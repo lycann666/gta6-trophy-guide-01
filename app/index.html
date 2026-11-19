@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTA VI Trophy Guide &amp; Tracker — Leonida Legend</title>
+<meta name="description" content="The complete offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI, with a roadmap to the platinum, missable flags, and a cited guide for every trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 200 120" role="img" aria-label="Stylised Leonida sunset">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#2b1055"/><stop offset=".55" stop-color="#7597de"/><stop offset="1" stop-color="#ff9a5a"/>
+        </linearGradient>
+      </defs>
+      <rect width="200" height="120" fill="url(#sky)"/>
+      <circle cx="150" cy="42" r="18" fill="#ffd166"/>
+      <path d="M0 84 L30 60 L55 84 L85 52 L120 84 L150 66 L180 84 L200 72 L200 120 L0 120 Z" fill="#1d2b53"/>
+      <path d="M0 96 L200 96 L200 120 L0 120 Z" fill="#120e2b"/>
+      <path d="M20 96 q10 -8 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="#4fc3f7" stroke-width="2" opacity=".7"/>
+    </svg>
+  </div>
+  <div class="hero-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Legend</h1>
+    <p class="sub">The complete trophy guide &amp; tracker for GTA VI — every official name, description and grade, a cited guide for each trophy, a roadmap to the platinum, and a checklist that saves in your browser. Works fully offline.</p>
+    <p class="notice">GTA VI is not yet released. Guides are written from the official trophy descriptions; where a step cannot be verified before launch, the guide says so plainly and cites its sources.</p>
+  </div>
+</header>
+
+<main>
+  <section class="progress-card" id="progressCard" aria-label="Progress">
+    <div class="progress-head">
+      <div>
+        <strong id="progressCount">0 / 55</strong>
+        <span id="progressLabel">trophies earned</span>
+      </div>
+      <div class="progress-stats" id="progressStats"></div>
+    </div>
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBarWrap">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <p class="points" id="pointsLine"></p>
+  </section>
+
+  <nav class="views" aria-label="Views">
+    <button type="button" class="view-btn active" data-view="checklist">Checklist</button>
+    <button type="button" class="view-btn" data-view="roadmap">Roadmap to Platinum</button>
+    <button type="button" class="view-btn" data-view="missable">Missable trophies</button>
+  </nav>
+
+  <section class="toolbar" id="toolbar" aria-label="Filters and tools">
+    <label class="search-box">Search
+      <input type="search" id="searchInput" placeholder="Search name, description or guide…" autocomplete="off">
+    </label>
+    <label>Kind
+      <select id="kindFilter">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="missable">Missable</option>
+        <option value="collectibles">Collectibles</option>
+        <option value="activities">Activities</option>
+        <option value="online">Online</option>
+      </select>
+    </label>
+    <label>Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="check-label"><input type="checkbox" id="spoilerToggle"> Hide story spoilers</label>
+    <label class="check-label"><input type="checkbox" id="earnedOnlyToggle"> Earned only</label>
+    <div class="tool-buttons">
+      <button type="button" id="exportBtn">Export progress</button>
+      <button type="button" id="importBtn">Import progress</button>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+      <button type="button" id="resetBtn">Reset</button>
+    </div>
+  </section>
+
+  <p class="result-count" id="resultCount"></p>
+
+  <section id="roadmapView" class="roadmap" hidden aria-label="Roadmap to the platinum"></section>
+  <section id="missableView" class="missable-note" hidden aria-label="Missable trophies">
+    <h2>Missable trophies — do these on time</h2>
+    <p>Seven trophies are flagged missable from their official descriptions: they need a story state, a partner, or a one-off moment that may not come back after the finale. Do them during Stage 1 of the roadmap, and save before every big story choice.</p>
+    <div id="missableList"></div>
+  </section>
+
+  <section id="listView" aria-label="Trophy checklist">
+    <ul class="trophy-list" id="trophyList"></ul>
+  </section>
+
+  <section id="detailView" class="detail" hidden aria-label="Trophy detail">
+    <button type="button" id="detailClose">&larr; Back to checklist</button>
+    <article id="detailBody"></article>
+  </section>
+</main>
+
+<footer>
+  <p>Sources for every trophy: the official PlayStation trophy list, the Exophase GTA VI trophy listing, and the PSNProfiles GTA VI trophy listing — linked beside each guide. All guide text is written for this page in our own words. No Rockstar Games logo, artwork or game screenshots are used; the art above is original CSS/SVG.</p>
+  <p>Progress is saved only in this browser (localStorage). Export it to a file to keep a backup or move it to another browser.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
